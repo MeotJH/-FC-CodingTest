@@ -26,12 +26,10 @@ public class BJ1919 {
 
     private static int[] getAlphaArr(String target) {
         int[] count = new int[26];
-
         //해당하는 알파벳이 있으면 1을 더해준다. 1이면 있다 0 이면 없다.
         for (int i = 0; i < target.length(); i++) {
             count[target.charAt(i) - 'a']++;
         }
-
         return count;
     }
 }
