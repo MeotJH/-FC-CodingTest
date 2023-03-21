@@ -21,13 +21,13 @@ public class BJ1157 {
 
         int tempKey = strArr[0];
         int rslt = 0;
-        for (int i = 0; i < strArr.length; i++) {
+        for (int i = 1; i < strArr.length; i++) {
 
             if(strArr[i] > tempKey){
+                tempKey = strArr[i];
                 rslt = i;
-            }else if(strArr[i] == tempKey && i != 0){
+            }else if(strArr[i] == tempKey){
                 rslt = 63;
-                break;
             }
 
         }
