@@ -33,4 +33,50 @@ public class BJ13223 {
 
         System.out.println(String.format("%02d:%02d:%02d", resultHour, resultMinute, resultSecond));
     }
+
+
+    public static void mainKJH(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String[] now = sc.nextLine().split(":");
+        String[] target = sc.nextLine().split(":");
+
+        int[] nowNum = Arrays.stream(now).mapToInt(Integer::parseInt).toArray();
+        int[] targetNum = Arrays.stream(target).mapToInt(Integer::parseInt).toArray();
+
+        int[] result = new int[3];
+
+        // 2 , 1 , 0
+        int loopTime = nowNum.length - 1;
+        for (int i = loopTime; i >= 0 ; i--) {
+            int targetOne = targetNum[i];
+            int nowOne = nowNum[i];
+
+            if( targetOne < nowOne){
+
+                if(  i == 0 ){
+                    targetOne = targetOne + 24;
+                }else{
+                    targetNum[i-1] = targetNum[i-1] -1;
+                    targetOne = targetOne + 60;
+                }
+
+            }
+
+            if( i==0 && targetOne == nowOne){
+                targetOne = targetOne + 24;
+            }
+
+            result[i] = targetOne - nowOne;
+        }
+
+
+        String s = String.format("%02d", 3);
+
+
+        StringBuilder sb = new StringBuilder();
+        sb.append(String.format("%02d", result[0])).append(":").append(String.format("%02d", result[1])).append(":").append(String.format("%02d", result[2]));
+
+        System.out.println(sb);
+    }
 }
