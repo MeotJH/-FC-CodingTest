@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class BJ13223 {
 
-    public static void main(String[] args) {
+    public static void mainKJH(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         String[] now = sc.nextLine().split(":");
@@ -35,7 +35,7 @@ public class BJ13223 {
     }
 
 
-    public static void mainKJH(String[] args) {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         String[] now = sc.nextLine().split(":");
@@ -69,9 +69,6 @@ public class BJ13223 {
 
             result[i] = targetOne - nowOne;
         }
-
-
-        String s = String.format("%02d", 3);
 
 
         StringBuilder sb = new StringBuilder();
