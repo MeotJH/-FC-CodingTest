@@ -62,14 +62,7 @@ public class BJ1236 {
             }
         }
 
-        int rslt = 0;
-        if(nRslt > mRslt){
-            rslt = nRslt;
-        }else{
-            rslt = mRslt;
-        }
-
-        System.out.println(rslt);
+        System.out.println(Math.max(nRslt,mRslt));
 
     }
 }
